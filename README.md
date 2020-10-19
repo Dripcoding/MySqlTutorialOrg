@@ -2,6 +2,8 @@
 
 Notes and work from following the course at [mysqltutorial.org](https://mysqltutorial.org/)  
 
+</br>
+
 # Table of Contents
 * SELECT
 </br>
@@ -39,7 +41,6 @@ FROM table_name ---> SELECT column1, column2, column3
 ```
 SELECT * FROM employees
 ```
-</br>
 </br>
 
 # ORDER BY
@@ -138,3 +139,61 @@ FIELD(search string/column, string1, string2, string3, ...)
 * sorts orders according to the value of FIELD() on a string
     * 'In Process' orders listed first
     * 'Shipped' orders listed last
+
+</br>
+</br>
+
+# WHERE
+* allows you to specify a search condition for the rows returned
+
+```
+SELECT 
+    select_list
+FROM
+    table_name
+WHERE
+    search_condition;
+```
+
+* ```search_condition``` is a combination of one or more predicates using logical operators
+
+```
+AND OR NOT LIKE IN BETWEEN
+```
+* rows that cause the search_condition to be true are returned in the final result set
+
+<br/>
+
+* MySql evaluates ```WHERE``` before SELECT
+
+```
+FROM ---> WHERE ---> SELECT ---> ORDER BY
+```
+
+* use wildcards to find rows matching a specified pattern
+  * ```%``` matches any string of zero or more chars
+  * ```_``` matches any single character
+
+```
+WHERE lastname LIKE '%son';
+```
+
+* use ```IN``` to find values that match a value in a given list
+
+```
+value IN (value1, value2)
+```
+
+* use ```IS NULL``` to check if a value is null
+  * null is used to mark that a piece of info is missing or unknown
+
+use comparison operators to form search expressions
+
+```
+ = equal to
+ <> or != less than
+< less than
+> greater than
+<= less than or equal to
+>= greater than or equal to 
+```
