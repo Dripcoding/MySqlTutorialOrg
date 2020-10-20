@@ -1,0 +1,32 @@
+-- select all lastNames from employees
+-- select all lastNames, firstNames, and jobTitles from employees
+-- select all employee data from employees
+
+
+-- sort customers by their last name in ascending order A-Z
+-- sort customers by last name in descending order Z-A
+-- sort customers by last name descending and then
+-- sort customers by first name ascending
+-- sort order details by descending subtotal
+-- subtotal = quantityOrdered * priceEach
+-- sort sales orders based on their status in order
+
+
+-- find employees whose jobtitle is sales rep
+-- find employees whose jobtitle is sales rep and office code is 1
+-- find employees whose jobtitle is sales rep or office code is 1
+-- find employees whose office code is between 1 and 3
+-- find employees whose last names en with 'son'
+-- find employees who are in office 1, 2, and 3
+-- find employees whose reportsTo value is null
+-- find employees who are not sales reps
+-- find employees whose office code is greater than 5
+-- find employees with office code less than or equal to 4
+
+
+-- find unique last names of employees
+-- find unique state from customers table
+-- find unique combination of city and state from customers
+-- use GROUP BY to select unique states of customers
+-- count unique states of customers in the US
+-- find the first 5 non-null unique states of customers
