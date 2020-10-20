@@ -197,3 +197,73 @@ use comparison operators to form search expressions
 <= less than or equal to
 >= greater than or equal to 
 ```
+
+# DISTINCT
+* use ```DISTINCT``` to remove duplicate rows when querying data
+* use to select unique rows
+  
+```
+SELECT DISTINCT
+    select_list
+FROM
+    table_name;
+```
+* ```DISTINCT``` keeps one NULL value from many in a column
+* find unique combinations when using ```DISTINCT``` from multiple columns
+  
+```
+SELECT DISTINCT
+    state, city
+FROM
+    customers
+WHERE
+    state IS NOT NULL
+ORDER BY
+    state,
+    city;
+```
+
+<br/>
+
+* ```GROUP BY``` without aggregate functiones behave like ```DISTINCT```
+
+```
+SELECT
+    state
+FROM
+    customers
+GROUP BY state;
+```
+* ```DISTINCT``` does not sort the result set
+* ```GROUP BY``` does sort the result set
+
+<br/>
+
+* use ```DISTINCT``` to remove duplicates before using ```AGGREGATES```
+
+```
+SUM AVG COUNT
+```
+
+```
+SELECT
+    COUNT(DISTINCT state)
+FROM
+    customers
+WHERE
+    country = 'USA';
+```
+
+<br/>
+
+* use ```LIMIT``` to find the first X unique rows
+
+```
+SELECT DISTINCT
+    state
+FROM
+    customers
+WHERE
+    state IS NOT NULL
+LIMIT 5;
+```
