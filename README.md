@@ -283,3 +283,22 @@ expression1 AND expression2
 SELECT 1 = 0 and 1 / 0;
 mysql only evaluates  1 = 0 and stops since it returns false (0)
 ```
+
+<br/>
+
+# OR
+* logical operator that combines boolean expressions and returns true when either condition is true
+* uses short-circuit evaluation 
+* ```operator precedence``` - OR is evaluated after AND expressions
+
+```
+SELECT true OR false AND false;
+mysql returns true (1)
+```
+
+* use parens to change order of operations
+
+```
+SELECT (true OR false) AND false;
+mysql returns false (0)
+```
