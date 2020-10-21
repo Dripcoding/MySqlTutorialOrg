@@ -302,3 +302,51 @@ mysql returns true (1)
 SELECT (true OR false) AND false;
 mysql returns false (0)
 ```
+
+<br/>
+
+# IN
+* allows you to determine if a specified value matches any value in a set or result set of a subquery
+
+```
+SELECT 
+    column1,column2,...
+FROM
+    table_name
+WHERE 
+	(expr|column_1) IN ('value1','value2',...);
+```
+
+* when values in the lsit are all constants
+  * evaluate values based on type of column1 or result of expr
+  * sort values
+  * search for the value using binary search algorithm (very fast)
+
+* if expression or value in list is NULL then NULL is returned
+* combine ```IN``` with ```NOT``` to find values not in list
+  
+<br/>
+
+* ```IN``` is often used with subqueries
+* subqueries get a list of values from 1 or more tables and uses them as input values of the ```IN``` operator
+
+```
+SELECT    
+	orderNumber, 
+	customerNumber, 
+	status, 
+	shippedDate
+FROM    
+	orders
+WHERE orderNumber IN
+(
+	 SELECT 
+		 orderNumber
+	 FROM 
+		 orderDetails
+	 GROUP BY 
+		 orderNumber
+	 HAVING SUM(quantityOrdered * priceEach) > 60000
+);
+```
+* 

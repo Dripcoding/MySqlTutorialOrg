@@ -23,4 +23,22 @@ WHERE (country != 'USA' OR country != 'FRANCE')
 AND creditlimit > 10000
 ORDER BY customername;
 
--- find orders whose total values are greater than 60000
+-- find offices that are located in the USA or FRANCE
+SELECT officecode, city, phone, country
+FROM offices
+WHERE country IN ('USA', 'France');
+
+-- find offices that are not located in the USA or FRANCE
+SELECT officecode, city, phone, country
+FROM offices
+WHERE country NOT IN ('USA', 'France');
+
+-- find orders whose total values are greater than 600000
+SELECT ordernumber, customernumber, status, shippeddate
+FROM orders
+WHERE ordernumber IN
+(
+    SELECT DISTINCT ordernumber
+    FROM orderdetails
+    HAVING SUM(quantityOrdered * priceEach) > 60000
+);
