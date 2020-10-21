@@ -267,3 +267,19 @@ WHERE
     state IS NOT NULL
 LIMIT 5;
 ```
+
+# AND
+* logical operator that combines 2 or more boolean expressions
+* returns ```true``` if all expressions eval to true
+
+```
+expression1 AND expression2
+```
+
+* multiple expressions form a ```condition```
+* ```short-circuit evaluation``` mysql stops evaluating expression when it can determine the result
+
+```
+SELECT 1 = 0 and 1 / 0;
+mysql only evaluates  1 = 0 and stops since it returns false (0)
+```

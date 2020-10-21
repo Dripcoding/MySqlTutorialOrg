@@ -41,19 +41,23 @@
 -- find customers who are located in USA or FRANCE
 -- find customers who are located in USA or FRANCE and have a credit limit larger than 100k
 
+
 -- find offices that are located in the USA or FRANCE
 -- find offices that are not located in the USA or FRANCE
 -- find orders whose total values are greater than 60000
 
+
 -- find products whose buy prices are between 90 and 100
 -- find products whose buy prices are not between 20 and 100
 -- find orders which hvae the required dates between 1/1/2003 and 1/31/2003
+
 
 -- find employees whose first names start with 'a'
 -- find employees whose last names contain 'on'
 -- find employees whose first names start with T, end with m, and contain any single character between
 -- find employees whose last names don't start with character Y
 -- find products whose product codes contain string '_20'
+
 
 -- find top 5 customers who have the highest credit
 -- list customers 10 at a time
