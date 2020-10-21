@@ -349,4 +349,19 @@ WHERE orderNumber IN
 	 HAVING SUM(quantityOrdered * priceEach) > 60000
 );
 ```
-* 
+  
+<br />
+
+# BETWEEN
+* use ```BETWEEN``` operator to specify whether a value is in range or not
+
+```
+expr [NOT] BETWEEN begin_expr AND end_expr;
+```
+
+* all three expressions must be of the same data type
+* ```BETWEEN``` is inclusive
+  * if expr is >= value of begin_expr and expr is <= end_expr, return true
+  * return false otherwise
+* use ```NOT BETWEEN``` to find values outside the specified range
+* use ```> and <``` to specify an exclusive range

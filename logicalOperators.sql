@@ -42,3 +42,21 @@ WHERE ordernumber IN
     FROM orderdetails
     HAVING SUM(quantityOrdered * priceEach) > 60000
 );
+
+-- find products whose buy prices are between 90 and 100
+SELECT productcode, productname, buyprice
+FROM products
+WHERE buyprice BETWEEN 90 AND 100; 
+
+-- find products whose buy prices are not between 20 and 100
+SELECT productcode, productname, buyprice
+FROM products
+WHERE buyprice NOT BETWEEN 20 AND 100;
+
+-- find orders which have the required dates between 1/1/2003 and 1/31/20033
+SELECT ordernumber, requireddate, status
+FROM orders
+WHERE requireddate
+BETWEEN
+    CAST('2003-01-01' AS DATE) AND
+    CAST('2003-01-31' AS DATE);
