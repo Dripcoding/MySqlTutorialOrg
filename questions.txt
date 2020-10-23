@@ -70,3 +70,10 @@
 -- find employees whose first names start with 'T' and end with 'm'
 -- find employees whose last names don't start with 'B'
 -- find products whose product codes contain the string '_20'
+
+
+-- find top 5 customers with the highest credit
+-- find 5 customers who have the lowest credit 
+-- get rows of page 1 which contains the first 10 customers sorted by customer name;
+-- get rows of page 2 which contains row 11-20
+-- find customer who has the 2nd highest credit

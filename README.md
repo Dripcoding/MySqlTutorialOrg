@@ -414,3 +414,80 @@ WHERE
 
 * use ```ESCAPE``` clause to speicy escape chars to wildcard is interpreted as a literal char
 * ```\``` is the default escape char
+
+<br/>
+
+# LIMIT
+* used in SELECT statement to constrain number of rows to return
+* accepts 1 or 2 args that must be 0 or positive ints
+
+```
+SELECT 
+    select_list
+FROM
+    table_name
+LIMIT [offset,] row_count;
+```
+
+* offset = offset of the 1st row to return 
+  * offset of the 1st row is 0 not 1
+* row_count = max number of rows to return
+
+* find max rows to return from the 1st row
+```
+LIMIT row_count is equal to LIMIT 0, row_count
+```
+
+<br />
+
+* alternative syntax to support POSTGRESQL
+```
+LIMIT row_count OFFSET offset
+```
+
+<br/>
+
+* use ```LIMIT``` WITH ```ORDER BY``` to constrain the result rows in unique order
+* without ordering, you will not know which rows the query will return (order won't be known)
+
+```
+SELECT select_list
+FROM table_name
+ORDER BY order_expression
+LIMIT offset, row_count;
+```
+* ```LIMIT``` evaluated last in SELECT statement
+
+
+```
+FROM -> WEHRE -> SELECT -> ORDER BY -> LIMIT
+```
+
+<br/>
+
+* pagination - divide rows in to pages, where each page contains a certain number of rows like5, 10, 20.
+```
+total rows / rows per page = number of pages
+```
+  
+```
+SELECT 
+    customerNumber, 
+    customerName
+FROM
+    customers
+ORDER BY customerName    
+LIMIT 10;
+
+find first 10 customers sorted by name
+```
+
+<br />
+
+* get the nth highest or lowest value
+```
+SELECT select_list
+FROM table_name
+ORDER BY sort_expression
+LIMIT n-1, 1;
+```
