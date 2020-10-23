@@ -25,5 +25,5 @@ LIMIT 10, 10;
 -- find customer who has the 2nd highest credit
 SELECT customernumber, customername, creditlimit
 FROM customers
-ORDER BY creditlimit DESC;
+ORDER BY creditlimit DESC
 LIMIT 1, 1;
