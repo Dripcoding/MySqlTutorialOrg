@@ -48,10 +48,18 @@ SELECT productcode, productname, buyprice
 FROM products
 WHERE buyprice BETWEEN 90 AND 100; 
 
+SELECt productcode, productname, buyprice
+FROM products
+WHERE buyprice >= 90 AND buyprice <=100;
+
 -- find products whose buy prices are not between 20 and 100
 SELECT productcode, productname, buyprice
 FROM products
 WHERE buyprice NOT BETWEEN 20 AND 100;
+
+SELECT productcode, productname, buyprice
+FROM products
+where buyPrice > 20 AND buyprice < 100;
 
 -- find orders which have the required dates between 1/1/2003 and 1/31/20033
 SELECT ordernumber, requireddate, status
