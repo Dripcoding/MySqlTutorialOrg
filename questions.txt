@@ -63,3 +63,10 @@
 -- list customers 10 at a time
     -- find total rows from customers
 -- find customer who has the 2nd highest credit
+
+
+-- find employees whose first names start with 'a'
+-- find employees whose last names contain 'on'
+-- find employees whose first names start with 'T' and end with 'm'
+-- find employees whose last names don't start with 'B'
+-- find products whose product codes contain the string '_20'

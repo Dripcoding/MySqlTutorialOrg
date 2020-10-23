@@ -365,3 +365,52 @@ expr [NOT] BETWEEN begin_expr AND end_expr;
   * return false otherwise
 * use ```NOT BETWEEN``` to find values outside the specified range
 * use ```> and <``` to specify an exclusive range
+
+# LIKE
+* tests whether a string contains a specified pattern or not
+
+```
+expression LIKE pattern ESCAPE escape_character
+```
+
+* used in ```WHERE``` clause of SELECT, DELETE, UPDATE statements to filter data based on patterns
+
+<br />
+
+* ```%``` wildcard matches any string of 0 or more chars
+
+
+```
+s% matches any string that starts with 's'
+
+%on% matches a substring
+
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    lastname LIKE '%on%';
+```
+
+* ```_``` matches any single char
+
+```
+se_ matches any string that starts with 'se' and is followed by any char
+
+SELECT 
+    employeeNumber, 
+    lastName, 
+    firstName
+FROM
+    employees
+WHERE
+    firstname LIKE 'T_m';
+```
+
+<br/>
+
+* use ```ESCAPE``` clause to speicy escape chars to wildcard is interpreted as a literal char
+* ```\``` is the default escape char
