@@ -509,3 +509,41 @@ SELECT 1 IS NOT NULL, -- 1
        0 IS NOT NULL, -- 1
        NULL IS NOT NULL; -- 0
 ```
+
+<br />
+
+# ALIAS
+* use aliases to increase the readability of queries
+* column alias - give descriptive name to a column
+* table alias - give descriptive name to a table
+
+```
+SELECT 
+   [column_1 | expression] AS `descriptive name`
+FROM 
+   table_name;
+```
+* you can't use a column alias in the ```WHERE``` clause since the values have not been evaluated yet
+
+```
+table_name AS table_alias
+SELECT * FROM employees e;
+```
+
+* access column once a table is assigned an alias
+* table aliases are often used in join clauses and sub queries
+```
+table_alias.column_name
+```
+```
+SELECT
+	customerName,
+	COUNT(o.orderNumber) total
+FROM
+	customers c
+INNER JOIN orders o ON c.customerNumber = o.customerNumber
+GROUP BY
+	customerName
+ORDER BY
+	total DESC;
+```
