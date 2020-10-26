@@ -491,3 +491,21 @@ FROM table_name
 ORDER BY sort_expression
 LIMIT n-1, 1;
 ```
+
+<br />
+
+# IS NULL
+* to test whether a value is null or not
+* 1 represents true
+* 0 represents false
+* mysql doesn't have a built in BOOLEAN type
+
+```
+value IS NULL
+```
+
+```
+SELECT 1 IS NOT NULL, -- 1
+       0 IS NOT NULL, -- 1
+       NULL IS NOT NULL; -- 0
+```
