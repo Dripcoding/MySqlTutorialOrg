@@ -547,3 +547,42 @@ GROUP BY
 ORDER BY
 	total DESC;
 ```
+
+<br />
+
+#INNER JOIN
+* matches each row in one table with every row in other tables
+* allows you to query rows that have columns from all tables
+
+```
+SELECT
+    select_list
+FROM t1
+INNER JOIN t2 ON join_condition1
+INNER JOIN t3 ON join_condition2
+...;
+```
+
+```
+INNER JOIN (table to be joined with main table)
+ON (specify join condition - rule for matching rows)
+```
+
+```
+join tables t1 and t2
+
+SELECT 
+     select_list
+FROM 
+     t1
+INNER JOIN t2 ON join_condition;
+```
+* ```INNER JOIN``` compares each row in t1 with every row in t2
+  * if rows from both tables cause the condition to return TRUE
+    * create a new row whose columns contain all columns from the tables including this new row in the result set
+  * if condition returns false, ignore the row
+  * 0 rows cause the join condition to return TRUE ---> empty result set
+
+```
+INNER JOIN tries to find matching rows between all tables
+```

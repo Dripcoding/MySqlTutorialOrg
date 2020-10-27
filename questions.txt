@@ -108,3 +108,11 @@ HAVING
 -- use c as a table alias for customers table
 -- use o as a table alias for orders table
 -- don't use table aliases for the above query
+
+
+-- find the productcode and productname from 'products' table
+    -- textdescription of product line
+-- return order number, order status, total sales from orders and ordersdetails table
+-- find ordernumber, orderdate, orderlinenumber, productname, quantityordered, priceach for orders
+-- find ordernumber, orderdate, customername, orderlinenumber, productname, quantityordered, priceeach for orders
+-- find sales price of the product whose code is S10_1678 that is less than the manufacturer’s suggested retail price (MSRP) for that product.
